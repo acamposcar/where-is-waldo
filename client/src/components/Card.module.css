@@ -1,0 +1,17 @@
+.card {
+  height: 500px;
+  width: 350px;
+  cursor: pointer;
+  transition: transform 300ms ease;
+}
+
+.card:hover {
+  transform: scale(1.05)
+}
+
+.card>img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
