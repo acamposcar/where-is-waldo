@@ -1,12 +1,24 @@
 import React from 'react'
 import classes from './CharactersHeader.module.css'
 
-const CharactersHeader = ({ level }) => {
+const CharactersHeader = ({ characters, showInvalid, showValid }) => {
+  const image = (character) => {
+    const imageClasses = character.found ? `${classes.character} ${classes.found}` : `${classes.character}`
+    return <img className={imageClasses} src={`/images/${character.image}`} alt={character.name} />
+  }
+
+  let headerClasses = `${classes.characters}`
+  if (showValid) {
+    headerClasses += ` ${classes.valid}`
+  } else if (showInvalid) {
+    headerClasses += ` ${classes.invalid}`
+  }
+
   return (
-    <div className={classes.characters}>
-      {level.items?.map(item =>
-        <div key={item.name}>
-          <img className={classes.character} src={`/images/${item.image}`} alt={item.name} />
+    <div className={headerClasses}>
+      {characters?.map(character =>
+        <div key={character.name}>
+          {image(character)}
         </div>
       )}
     </div>
