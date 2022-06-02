@@ -11,8 +11,9 @@
   width: 60px;
   height: 60px;
   object-fit: cover;
+  object-position: top;
   border-radius: 100%;
-  transition: tranform 200ms ease;
+  transition: transform 200ms ease;
   margin: 5px;
 }
 

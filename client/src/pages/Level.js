@@ -6,7 +6,7 @@ import CharactersHeader from '../components/CharactersHeader'
 import Modal from '../components/Modal'
 import Backdrop from '../components/Backdrop'
 
-const Level = ({ levels }) => {
+const Level = ({ levels, updateRanking }) => {
   const { title } = useParams()
   const [currentLevel, setCurrentLevel] = useState('')
   const [showDialog, setShowDialog] = useState(false)
@@ -94,7 +94,7 @@ const Level = ({ levels }) => {
       <img className={classes.image} src={`/images/${currentLevel.image}`} alt={currentLevel.title} onClick={toggleDialog} />
 
       {itemsToFound.length === 0 && <Backdrop />}
-      {itemsToFound.length === 0 && <Modal time={formatSeconds(totalTime)} />}
+      {itemsToFound.length === 0 && <Modal updateRanking={updateRanking} levelId={currentLevel._id} time={totalTime} />}
 
     </>
   )
