@@ -31,7 +31,6 @@ function App () {
   }, [sendRequest])
 
   const updateRankingHandler = (levelId, newRanking) => {
-    console.log(levelId, newRanking)
     setLevels(prevState => {
       return prevState.map(level => {
         if (level._id === levelId) {

@@ -44,7 +44,6 @@ const Level = ({ levels, updateRanking }) => {
     setRelativeClickPosition({
       top: relativeTop / currentImageHeight, left: relativeLeft / currentImageWidth
     })
-    console.log(relativeClickPosition)
   }
 
   const toggleDialog = (e) => {
