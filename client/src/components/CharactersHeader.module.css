@@ -1,11 +1,14 @@
-.characters {
-  display: flex;
-  gap: 2em;
-  justify-content: center;
+.header {
   position: sticky;
   top: 0;
   background-color: hsla(0, 0%, 7%, 0.712);
   padding: 0.7em;
+}
+
+.characters {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
 }
 
 .character {
@@ -14,6 +17,11 @@
   object-fit: cover;
   border-radius: 100%;
   border: solid white;
+  transition: transform 300ms ease;
+}
+
+.character:hover {
+  transform: scale(1.5)
 }
 
 .found {
@@ -27,7 +35,7 @@
   padding: 0.5em;
   background-color: rgba(255, 0, 0, 0.842);
   text-align: center;
-  bottom: -80%;
+  bottom: -60%;
   border-radius: 10px;
 }
 
@@ -38,6 +46,14 @@
   padding: 0.5em;
   background-color: rgba(25, 211, 0, 0.842);
   text-align: center;
-  bottom: -80%;
+  bottom: -60%;
   border-radius: 10px;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 0.5em;
 }

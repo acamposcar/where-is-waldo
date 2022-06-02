@@ -1,11 +1,12 @@
 import React from 'react'
 import classes from './Dialog.module.css'
-const Dialog = ({ level, position, onSelection }) => {
+const Dialog = ({ itemsToFound, position, onSelection }) => {
   return (
     <div className={classes.dialog} style={{ top: position.y, left: position.x }}>
-      {level.items.map(item =>
+      {itemsToFound.map(item =>
         <div key={item.name}>
-          <button value={item.name} onClick={onSelection} className={classes.btn}>{item.name}</button>
+          <img onClick={() => onSelection(item.name)} className={`${classes.image} ${classes.btn}`} src={`/images/${item.image}`} alt={item.name} />
+
         </div>
       )}
     </div>
