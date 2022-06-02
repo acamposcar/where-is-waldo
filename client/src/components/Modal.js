@@ -22,7 +22,7 @@ const Modal = ({ time, levelId, updateRanking }) => {
         'Content-Type': 'application/json'
       }
     }, () => {
-      navigate('/', { replace: false })
+      navigate('/leaderboard', { replace: false })
       const newRanking = {
         name: nameRef.current.value,
         time,
