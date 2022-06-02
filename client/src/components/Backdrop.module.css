@@ -1,0 +1,7 @@
+.backdrop {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 40%;
+}
