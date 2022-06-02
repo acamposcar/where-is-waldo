@@ -36,13 +36,9 @@ const Modal = ({ time, levelId, updateRanking }) => {
     navigate('/', { replace: false })
   }
 
-  const formatSeconds = (seconds) => {
-    return new Date(seconds * 1000).toISOString().substring(14, 19)
-  }
-
   return (
     <div className={classes.modal}>
-      <div className={classes.time}>Your total time is {formatSeconds(time)} </div>
+      <div className={classes.time}>Your total time is {time} seconds </div>
       <div className={classes.body}>Submit your score on the global leaderboard!</div>
 
       <form onSubmit={submitHandler}>
