@@ -9,6 +9,14 @@ const Card = ({ level }) => {
   return (
     <div className={classes.card} onClick={clickHandler}>
       <img src={`/images/${level.image}`} alt={level.title} />
+      <div className={classes.title}>{level.title}</div>
+      <div className={classes.characters}>
+        {level.items.map(item => {
+          return (
+            <img key={item.name} className={classes.avatar} src={`/images/${item.image}`} alt={level.title} />
+          )
+        })}
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import classes from './Header.module.css'
 const Header = () => {
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Where is Waldo?</div>
+      <div className={classes.logo}>Game and Seek</div>
       <nav>
         <NavLink
           className={({ isActive }) =>

@@ -32,12 +32,6 @@ const Level = ({ levels, updateRanking }) => {
     return () => clearInterval(interval)
   }, [])
 
-  useEffect(() => {
-    if (itemsToFound.length === 0) {
-      setTotalTime(timer)
-    }
-  }, [itemsToFound.length])
-
   const getRelativeClickPosition = (rect, relativeLeft, relativeTop) => {
     const currentImageHeight = rect.height
     const currentImageWidth = rect.width
@@ -63,7 +57,13 @@ const Level = ({ levels, updateRanking }) => {
       setShowValidAlert(true)
       setTimeout(() => setShowValidAlert(false), 2000)
 
-      setItemsToFound(prevState => prevState.filter(item => item.name !== itemSelected.name))
+      setItemsToFound(prevState => {
+        const updatedItems = prevState.filter(item => item.name !== itemSelected.name)
+        if (updatedItems.length === 0) {
+          setTotalTime(timer)
+        }
+        return prevState.filter(item => item.name !== itemSelected.name)
+      })
 
       setCurrentLevel(prevState => {
         const updatedItems = prevState.items.map(item => {

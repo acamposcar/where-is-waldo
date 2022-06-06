@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import classes from './SelectLevel.module.css'
+import classes from './Leaderboard.module.css'
 import LeaderboardCard from '../components/LeaderboardCard'
 import Table from '../components/Table'
 const Leaderboard = ({ levels }) => {

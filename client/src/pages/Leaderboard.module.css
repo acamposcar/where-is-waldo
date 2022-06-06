@@ -1,7 +1,13 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 20px;
   justify-content: center;
   margin: 2em 0;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    gap: 50px;
+  }
 }

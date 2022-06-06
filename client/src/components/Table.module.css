@@ -1,19 +1,18 @@
 .center {
   display: flex;
   justify-content: center;
+  margin-bottom: 3em;
 }
-
-
 
 .table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: min(800px, 90vw);
+  font-size: 0.75em;
 }
 
 .table td,
 .table th {
-  border: 1px solid #ddd;
   padding: 8px;
 }
 
@@ -25,6 +24,12 @@
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: var(--primary-500);
+  background-color: rgb(71, 13, 110);
   color: white;
+}
+
+@media (min-width: 600px) {
+  .table {
+    font-size: 1em;
+  }
 }
