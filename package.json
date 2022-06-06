@@ -2,6 +2,9 @@
   "name": "where-is-waldo",
   "version": "0.0.0",
   "private": true,
+  "engines": {
+    "node": "18.2.0"
+  },
   "scripts": {
     "start": "node ./bin/www",
     "devStart": "nodemon ./bin/www"
