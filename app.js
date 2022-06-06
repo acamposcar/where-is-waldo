@@ -6,10 +6,16 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const connectDB = require('./config/db')
+const helmet = require('helmet')
+const compression = require('compression')
 
 const indexRouter = require('./routes/index')
 
 const app = express()
+
+app.use(helmet())
+
+app.use(compression())
 
 // connect database
 connectDB()
@@ -18,7 +24,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 app.use('/api', indexRouter)
 
